@@ -11,9 +11,9 @@ namespace SweepStakes
         private Dictionary<int, Contestant> contestant;
         private string name;
         public string Name;
-        public Sweepstakes(string Name)
+        public Sweepstakes(string name)
         {
-            this.Name = Name;
+            this.name = name;
         }
 
         public void RegisterContestant(Contestant contestant)

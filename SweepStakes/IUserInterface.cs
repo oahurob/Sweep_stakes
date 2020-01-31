@@ -6,17 +6,27 @@ using System.Threading.Tasks;
 
 namespace SweepStakes
 {
-    class IUserInterface
+    public static class IUserInterface
     {
-        public IUserInterface()
-        {
 
+        public static string GetUserFirstName()
+        {
+            Console.Write("Please enter your First name: ");
+            return Console.ReadLine();
         }
 
-        public static string GetUserInputFor(string prompt)
+        public static string GetUserLastName()
         {
-
-            return "temp";
+            Console.Write("Please enter your Last name: ");
+            return Console.ReadLine();
         }
+
+        public static string GetUserEmail()
+        {
+            Console.Write("Please enter your email address: ");
+            return Console.ReadLine();
+        }
+
+
     }
 }

@@ -17,5 +17,10 @@ namespace SweepStakes
         {
 
         }
+
+        public void Notify()
+        {
+
+        }
     }
 }
