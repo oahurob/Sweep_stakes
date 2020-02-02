@@ -14,14 +14,14 @@ namespace SweepStakes
 
         }
 
-        public static void InsertSweepstakes(Sweepstakes sweepstakes)
+        public void InsertSweepstakes(Sweepstakes sweepstakes)
         {
-
+           // sweepstakes.RegisterContestant();
         }
 
-        public void GetSweepstakes() //change to return Sweepstakes
-        {
-
-        }
+        //public Sweepstakes GetSweepstakes(Sweepstakes sweepstakes) //change to return Sweepstakes
+        //{
+            
+        //}
     }
 }

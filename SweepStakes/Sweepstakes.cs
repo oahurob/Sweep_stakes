@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace SweepStakes
 {
-    class Sweepstakes
+    public class Sweepstakes
     {
-        private Dictionary<int, Contestant> contestant;
+        private Dictionary<int, Contestant> contestants = new Dictionary<int, Contestant>();
+        Random winningNumber = new Random();
         private string name;
         public string Name;
+        private int registrationID;
         public Sweepstakes(string name)
         {
             this.name = name;
@@ -18,17 +20,23 @@ namespace SweepStakes
 
         public void RegisterContestant(Contestant contestant)
         {
-
+            contestant.FirstName = IUserInterface.GetUserFirstName();
+            contestant.LastName = IUserInterface.GetUserLastName();
+            contestant.EmailAddress = IUserInterface.GetUserEmail();
+            contestant.registrationNumber = registrationID;
+            contestants.Add(registrationID, contestant);
+            registrationID++;
         }
-
-        public void PickWinner() //change to return Contestant
+        public Contestant PickWinner()
         {
-
+            Contestant winner;
+            winner = contestants[winningNumber.Next(0, contestants.Keys.Count)];
+            return winner;
         }
 
         public void PrintContestantInfo(Contestant contestant)
         {
-
+            IUserInterface.PrintUserInfo(contestant);
         }
     }
 }
