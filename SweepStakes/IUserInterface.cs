@@ -61,8 +61,5 @@ namespace SweepStakes
         {
             Console.WriteLine("The winner of the Sweepstakes is: " + sweepstakes.name);
         }
-
-
-
     }
 }

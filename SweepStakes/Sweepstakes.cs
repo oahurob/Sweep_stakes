@@ -9,10 +9,12 @@ namespace SweepStakes
     public class Sweepstakes
     {
         private Dictionary<int, Contestant> contestants = new Dictionary<int, Contestant>();
+        public List<string> contestantsNames = new List<string>();
         Random winningNumber = new Random();
         public string name;
         public string Name;
         private int registrationID;
+        public int winnerKey;
         public Sweepstakes(string name)
         {
             this.name = name;
@@ -29,6 +31,7 @@ namespace SweepStakes
             Contestant winner;
             winner = contestants[winningNumber.Next(0, contestants.Keys.Count)];
             name = winner.FirstName + " " + winner.LastName;
+            winnerKey = winner.registrationNumber;
             return winner;
         }
 
@@ -39,5 +42,7 @@ namespace SweepStakes
                 Console.Write("registration number: " + contestant.registrationNumber);
                 Console.ReadLine();
         }
+
+        
     }
 }

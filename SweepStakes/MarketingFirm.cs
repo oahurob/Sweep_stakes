@@ -31,6 +31,7 @@ namespace SweepStakes
             }
             sweepstakes.PickWinner();
             IUserInterface.AnnouceWinner(sweepstakes);
+            IUserInterface.Notify(sweepstakes);
         }
     }
 }
