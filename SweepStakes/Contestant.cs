@@ -13,9 +13,8 @@ namespace SweepStakes
         string emailAddress;
         public int registrationNumber;
 
-        public Contestant(int registrationNumber)
+        public Contestant()
         {
-            this.registrationNumber = registrationNumber;
         }
         public string FirstName { get { return firstName; } set { firstName = value; } }
         public string LastName { get { return lastName; } set { lastName = value; } }

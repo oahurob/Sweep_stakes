@@ -18,11 +18,8 @@ namespace SweepStakes
         public void CreateSweepStakes()
         {
             Sweepstakes sweepstakes = new Sweepstakes(IUserInterface.SweepstakesName());
-            string holding = IUserInterface.PickManager();
-            if (holding == "stack")
-            {
-                SweepstakesStackManager.
-            }
+            manager.InsertSweepStakes(sweepstakes);
+            sweepstakes.RegisterContestant(IUserInterface.GetUserInfo());
         }
     }
 }

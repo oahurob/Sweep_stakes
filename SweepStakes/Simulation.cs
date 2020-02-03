@@ -15,6 +15,8 @@ namespace SweepStakes
         
         public void CreateMarketingFirmWithManager()
         {
+            ISweepstakesManager sweepstakesManager;
+            sweepstakesManager = IUserInterface.PickManager();
 
         }
     }

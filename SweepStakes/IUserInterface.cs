@@ -9,8 +9,9 @@ namespace SweepStakes
     public static class IUserInterface
     {
         
-        public static Contestant GetUserFirstName(Contestant contestant)
+        public static Contestant GetUserInfo()
         {
+            Contestant contestant = new Contestant();
             Console.Write("Please enter your First name: ");
             contestant.FirstName = Console.ReadLine();
             Console.Write("please enter your last name: ");
@@ -26,16 +27,27 @@ namespace SweepStakes
             return Console.ReadLine();
         }
 
-        public static string PickManager()
+        public static ISweepstakesManager PickManager()
         {
+            ISweepstakesManager pickManager;
             string pick;
             do
             {
                 Console.WriteLine("How would you like your sweepstakes to be managed? stack or queue?");
-                pick = Console.ReadLine();
+                pick = Console.ReadLine().ToLower();
             }
             while (pick != "stack" && pick != "queue");
-            return pick;
+            if(pick == "stack")
+            {
+                pickManager = new SweepstakesStackManager();
+                return pickManager;
+            }
+            else if(pick == "queue")
+            {
+                pickManager = new SweepstakesQueueManager();
+                return pickManager;
+            }
+            return null;
         }
 
         public static string SetSweepstake()
