@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SweepStakes
 {
-    public interface ISweepstakesManager
+    public abstract class ISweepstakesManager
     {
-            void InsertSweepStakes(Sweepstakes sweepstakes);
-            Sweepstakes GetSweepstakes();
+            public abstract void InsertSweepStakes(Sweepstakes sweepstakes);
+            public abstract Sweepstakes GetSweepstakes();
     }
 }

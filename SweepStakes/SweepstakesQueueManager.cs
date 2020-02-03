@@ -10,12 +10,12 @@ namespace SweepStakes
     {
         Queue<Sweepstakes> sweepstakes = new Queue<Sweepstakes>();
 
-        void ISweepstakesManager.InsertSweepStakes(Sweepstakes sweepstakes)
+        public override void InsertSweepStakes(Sweepstakes sweepstakes)
         {
             this.sweepstakes.Enqueue(sweepstakes);
         }
         
-        Sweepstakes ISweepstakesManager.GetSweepstakes()
+        public override Sweepstakes GetSweepstakes()
         {
             return sweepstakes.Dequeue();
         }

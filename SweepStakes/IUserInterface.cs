@@ -9,19 +9,20 @@ namespace SweepStakes
     public static class IUserInterface
     {
         
-        public static string GetUserFirstName()
+        public static Contestant GetUserFirstName(Contestant contestant)
         {
             Console.Write("Please enter your First name: ");
-            return Console.ReadLine();
-        }
-        public static string GetUserLastName()
-        {
+            contestant.FirstName = Console.ReadLine();
             Console.Write("please enter your last name: ");
-            return Console.ReadLine();
-        }
-        public static string GetUserEmail()
-        {
+            contestant.LastName = Console.ReadLine();
             Console.Write("Please enter your email address: ");
+            contestant.EmailAddress = Console.ReadLine();
+            return contestant;
+        }
+
+        public static string SweepstakesName()
+        {
+            Console.WriteLine("What would you like to name this sweepstakes?");
             return Console.ReadLine();
         }
 
@@ -36,14 +37,38 @@ namespace SweepStakes
             while (pick != "stack" && pick != "queue");
             return pick;
         }
-    
 
-        public static void PrintUserInfo(Contestant contestant)
+        public static string SetSweepstake()
         {
-            Console.WriteLine("Contestant name: " + contestant.FirstName + " " + contestant.LastName + ", ");
-            Console.Write("email: " + contestant.EmailAddress + ", ");
-            Console.Write("registration number: " + contestant.registrationNumber);
-            Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("What is the name of sweepstake?");
+            return Console.ReadLine();
+        }
+
+        public static int SetAmountOfContestants()
+        {
+            string amount;
+            int result;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("How many contestants are entering?");
+                amount = Console.ReadLine();
+            } while (Int32.TryParse(amount, out result) == false);
+            return result;
+        }
+
+        public static int SetAmountOfSweepstakes()
+        {
+            string amount;
+            int result;
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("How many sweepstakes do you want to input?");
+                amount = Console.ReadLine();
+            } while (Int32.TryParse(amount, out result) == false);
+            return result;
         }
 
         public static void AnnouceWinner(Sweepstakes sweepstakes)
