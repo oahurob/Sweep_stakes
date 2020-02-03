@@ -28,6 +28,7 @@ namespace SweepStakes
         {
             Contestant winner;
             winner = contestants[winningNumber.Next(0, contestants.Keys.Count)];
+            name = winner.FirstName + " " + winner.LastName;
             return winner;
         }
 

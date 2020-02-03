@@ -57,35 +57,9 @@ namespace SweepStakes
             return Console.ReadLine();
         }
 
-        public static int SetAmountOfContestants()
-        {
-            string amount;
-            int result;
-            do
-            {
-                Console.Clear();
-                Console.WriteLine("How many contestants are entering?");
-                amount = Console.ReadLine();
-            } while (Int32.TryParse(amount, out result) == false);
-            return result;
-        }
-
-        public static int SetAmountOfSweepstakes()
-        {
-            string amount;
-            int result;
-            do
-            {
-                Console.Clear();
-                Console.WriteLine("How many sweepstakes do you want to input?");
-                amount = Console.ReadLine();
-            } while (Int32.TryParse(amount, out result) == false);
-            return result;
-        }
-
         public static void AnnouceWinner(Sweepstakes sweepstakes)
         {
-            Console.WriteLine("The winner of the Sweepstakes is: " + sweepstakes.PickWinner().FirstName + " " + sweepstakes.PickWinner().LastName);
+            Console.WriteLine("The winner of the Sweepstakes is: " + sweepstakes.Name);
         }
 
 
