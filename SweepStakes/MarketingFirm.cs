@@ -17,9 +17,18 @@ namespace SweepStakes
 
         public void CreateSweepStakes()
         {
+            string more = "yes";
             Sweepstakes sweepstakes = new Sweepstakes(IUserInterface.SweepstakesName());
-            manager.InsertSweepStakes(sweepstakes);
             sweepstakes.RegisterContestant(IUserInterface.GetUserInfo());
+            more = Console.ReadLine();
+            while(more == "yes")
+            {
+                sweepstakes.RegisterContestant(IUserInterface.GetUserInfo());
+                more = Console.ReadLine();
+                manager.InsertSweepStakes(sweepstakes);
+            }
+            sweepstakes.PickWinner();
+            IUserInterface.AnnouceWinner(sweepstakes);
         }
     }
 }

@@ -85,7 +85,7 @@ namespace SweepStakes
 
         public static void AnnouceWinner(Sweepstakes sweepstakes)
         {
-            Console.WriteLine("The winner of the Sweepstakes is: " + sweepstakes.PickWinner());
+            Console.WriteLine("The winner of the Sweepstakes is: " + sweepstakes.PickWinner().FirstName + " " + sweepstakes.PickWinner().LastName);
         }
 
 

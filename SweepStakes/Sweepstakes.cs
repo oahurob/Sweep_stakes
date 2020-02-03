@@ -20,7 +20,6 @@ namespace SweepStakes
 
         public void RegisterContestant(Contestant contestant)
         {
-            IUserInterface.GetUserInfo();
             contestant.registrationNumber = registrationID;
             contestants.Add(registrationID, contestant);
             registrationID++;
@@ -34,13 +33,10 @@ namespace SweepStakes
 
         public void PrintContestantInfo(Contestant contestant)
         {
-            for (int i = 0; i < contestants.Count(); i++)
-            {
                 Console.WriteLine("Contestant name: " + contestant.FirstName + " " + contestant.LastName + ", ");
                 Console.Write("email: " + contestant.EmailAddress + ", ");
                 Console.Write("registration number: " + contestant.registrationNumber);
                 Console.ReadLine();
-            }
         }
     }
 }
