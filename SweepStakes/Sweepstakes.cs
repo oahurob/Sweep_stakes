@@ -10,7 +10,7 @@ namespace SweepStakes
     {
         private Dictionary<int, Contestant> contestants = new Dictionary<int, Contestant>();
         Random winningNumber = new Random();
-        private string name;
+        public string name;
         public string Name;
         private int registrationID;
         public Sweepstakes(string name)
