@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SweepStakes
 {
-    class Simulation
+    public class Simulation
     {
         public Simulation()
         {
@@ -17,7 +17,8 @@ namespace SweepStakes
         {
             ISweepstakesManager sweepstakesManager;
             sweepstakesManager = IUserInterface.PickManager();
-
+            MarketingFirm marketingFirm = new MarketingFirm(sweepstakesManager);
+            marketingFirm.CreateSweepStakes();
         }
     }
 }

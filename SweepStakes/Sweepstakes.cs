@@ -20,7 +20,7 @@ namespace SweepStakes
 
         public void RegisterContestant(Contestant contestant)
         {
-            IUserInterface.GetUserFirstName(contestant);
+            IUserInterface.GetUserInfo();
             contestant.registrationNumber = registrationID;
             contestants.Add(registrationID, contestant);
             registrationID++;
