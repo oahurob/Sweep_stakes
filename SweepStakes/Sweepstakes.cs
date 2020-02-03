@@ -43,6 +43,21 @@ namespace SweepStakes
                 Console.ReadLine();
         }
 
-        
+        public void ContestantsNamesToList()
+        {
+            for(int i = 0; i < contestants.Count; i++)
+            {
+                contestantsNames.Add(contestants[i].FirstName);
+            }
+        }
+
+        public void Notify()
+        {
+            foreach(var name in contestantsNames)
+            {
+                Contestant contestant = new Contestant();
+                contestant.Notify(contestant);
+            }
+        }
     }
 }
